@@ -11,7 +11,7 @@ public Class AttachmentsController {
     @RequestMapping(value = "/attachments/upload", method = RequestMethod.POST)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public void uploadAttachmentMTOM(@RequestParam MultipartFile file) {        
-        webService.uploadAttachmentMTOM(new AttachmentDTO(            
+        attachmentService.uploadAttachmentMTOM(new AttachmentDTO(            
             file.getOriginalFilename(), 
             file.getBytes())
         );
@@ -26,7 +26,7 @@ public Class AttachmentsController {
      */    
     @RequestMapping(value = "/attachments/download", method = RequestMethod.GET)
     public ResponseEntity<byte[]> downloadAttachment(@RequestParam String fileName) {
-        WSDLDownloadResponse response = webService.downloadAttachment(fileName);
+        WSDLDownloadResponse response = attachmentService.downloadAttachment(fileName);
         
         HttpHeaders headers = new HttpHeaders();
         headers.setContentDispositionFormData(response.getFileName(), response.getFileName());        
