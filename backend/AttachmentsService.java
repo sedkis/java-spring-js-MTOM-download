@@ -10,6 +10,8 @@ public Class AttachmentsService {
      */            
     public void uploadAttachmentMTOM(AttachmentDTO attachmentDto) {        
         // from() static method in UploadWSDL class that acts as a converter
+        // signature looks like this:
+        // public UploadWSDL(AttachmentDTO attachmentDto);
         UploadWSDL uploadRequest = UploadWSDL.from(attachmentDto);
         myWebService.sendAndReceive(uploadRequest, "soapActionFromWSDL");
     }
@@ -20,7 +22,7 @@ public Class AttachmentsService {
      * @return 
      */        
     public ResponseEntity<byte[]> downloadAttachment(String fileName) {
-        // from() static method in DownloadWSDL class that acts as a converter
+        // from() is same as above
         DownloadWSDL downloadRequest = DownloadWSDL.from(filename); 
         return myWebService.sendAndReceive(downloadRequest, "soapActionFromWSDL_2");
     }
