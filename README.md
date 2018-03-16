@@ -5,6 +5,9 @@ I had a lot of trouble figuring out the best way to do this.  So I put this here
 
 This isn't a complete example obviously.  It is a skeleton of everything you need if you want to send or receive MTOM / XOP SOAP requests.
 
+# Backend
+Pretty straight forward service oriented architecture.  Controller accepts a request.  Spring unmarshalles the file into a "MultiPartFile".  Controller converts request into DTO then passes it so service.  This is where business logic goes.  Then it is passed to a WebService layer where the outgoing request is made.  
+
 # MTOM
 [MTOM or the Message Transmission Optimization Mechanism](https://en.wikipedia.org/wiki/Message_Transmission_Optimization_Mechanism) is a low overhead way of sending attachments in a SOAP message
 
