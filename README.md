@@ -1,6 +1,8 @@
 ## SOAP MTOM / XOP template using Java 8, Spring, JAXB
 Uploading and Downloading files is a pain in the ass.  It feels like all these hack attempts at creating fake HTML forms and fake clicking them through JavaScript just to send a specific type of file to a specific type of REST endpoint.
 
+I had a lot of trouble figuring out the best way to do this.  So I put this here for others that are looking to send MTOM requests or even just accept and send binary files through an HTTP end point.  
+
 This isn't a complete example obviously.  It is a skeleton of everything you need if you want to send or receive MTOM / XOP SOAP requests.
 
 # MTOM
