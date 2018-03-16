@@ -8,7 +8,7 @@ function uploadFile(file) {
     var fd = new FormData();    
     fd.append('file', file);    
 
-    var uploadUrl = appConfigurationService.basePath + '/attachments/upload';
+    var uploadUrl = 'http://localhost:8080/attachments/upload';
 
     $http.post(uploadUrl, fd, {    
         // undefined tells the Spring marshaller to leave the content as is.
